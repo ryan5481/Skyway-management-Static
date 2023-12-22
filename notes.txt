@@ -1,0 +1,28 @@
+//https://skywaynepal.com/
+
+//https://demo.radiantnepal.info/amity-global/Newspaperpub.html
+
+//https://www.prokleengroups.com/
+
+//gallery: https://cloudinary.com/blog/guest_post/airbnb-image-cards-with-chakra-ui
+
+// text-img card: https://chakra-templates.dev/components/cards
+
+//coverflow style carousel: https://codesandbox.io/s/chakra-framer-carousel-demo-rr0dnc?fontsize=14&hidenavigation=1&theme=dark&file=/public/chakra.svg, https://socket.dev/npm/package/chakra-framer-carousel
+
+//full width carousel: https://react-responsive-carousel.js.org/
+
+// https://chakra-templates.dev/navigation/navbar
+
+//Responsive: https://blog.logrocket.com/building-responsive-components-chakra-ui/
+
+// https://choc-ui.com/docs/elements/alerts
+
+//reactive owl carousel https://stackoverflow.com/questions/46088145/how-to-make-owl-carousel-responsive-in-react
+
+// refLine https://www.youtube.com/watch?v=r1auJEf9ISo
+
+//intersection observer 
+
+
+AOS: CSS-Driven “On Scroll” Animation Library
