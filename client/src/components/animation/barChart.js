@@ -24,7 +24,7 @@ const BarChart = () => {
     "box3BottomText": "sectors",
   }
 
-  const [barHeights, setBarHeights] = useState([0, 0, 0]);
+  // const [barHeights, setBarHeights] = useState([0, 0, 0]);
   const [animationStarted, setAnimationStarted] = useState(false);
   const [inViewRef, inView] = useInView();
   // const [barChartData, setBarChartData] = useState({})
@@ -48,15 +48,8 @@ const BarChart = () => {
   // }, [])
 
 
-  useEffect(() => {
-    if (
-      barChartData.column1height &&
-      barChartData.column2height &&
-      barChartData.column3height
-    ) {
-      setBarHeights([barChartData.column1height, barChartData.column2height, barChartData.column3height]);
-    }
-  }, [barChartData]);
+  
+ const barHeights = [barChartData.column1height, barChartData.column2height, barChartData.column3height]
 
   useEffect(() => {
     if (inView && !animationStarted) {

@@ -314,13 +314,13 @@ const AllJobs = ({ displayAll }) => {
                                                             fontWeight={'300'}>
                                                             Job code: {modalJobData.jobCode}
                                                         </Text>
-                                                        <Text
+                                                        {/* <Text
                                                             fontWeight={300}
                                                             fontSize={'2xl'}
                                                             pt={5}
                                                         >
                                                             {modalJobData.salary} per month
-                                                        </Text>
+                                                        </Text> */}
                                                     </Box>
 
                                                     <Stack
@@ -367,16 +367,16 @@ const AllJobs = ({ displayAll }) => {
                                                                         </Text>{' '}
                                                                         {modalJobData.isFulltime = true ? "Fulltime" : "Part-time"}
                                                                     </ListItem>
-                                                                    <ListItem>
+                                                                    {/* <ListItem>
                                                                         <Text as={'span'} fontWeight={'bold'}>
                                                                             Work Hours:
                                                                         </Text>{' '}
                                                                         {modalJobData.workHours}
-                                                                    </ListItem>
+                                                                    </ListItem> */}
 
                                                                 </List>
                                                                 <List spacing={2}>
-                                                                    <ListItem>
+                                                                    {/* <ListItem>
                                                                         <Text as={'span'} fontWeight={'bold'}>
                                                                             Day Off:
                                                                         </Text>{' '}
@@ -393,7 +393,7 @@ const AllJobs = ({ displayAll }) => {
                                                                             Food:
                                                                         </Text>{' '}
                                                                         {modalJobData.fooding == true ? "Yes" : "No"}
-                                                                    </ListItem>
+                                                                    </ListItem> */}
                                                                 </List>
                                                             </SimpleGrid>
                                                         </Box>
@@ -407,7 +407,7 @@ const AllJobs = ({ displayAll }) => {
                                                                 Qualifications Required
                                                             </Text>
                                                             <VStack spacing={2} fontSize={{ base: '14px', lg: '18px' }} fontWeight={'400'}>
-                                                                <Text textAlign={"left"}>
+                                                                <Text alignItems="left" textAlign={"left"}>
                                                                     {modalJobData && modalJobData.reqQualification ? (
                                                                         modalJobData.reqQualification
                                                                             .split(". ")
