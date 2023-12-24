@@ -11,7 +11,7 @@ const navigate = useNavigate()
       className='hero-pic'
       w={'full'}
       backgroundImage={
-        `data:image/jpeg;base64,${props.data.heroImage}`
+        `/uploads/whyChooseUsImage/${props.data.heroImage}`
       }
       backgroundSize={'cover'}
       backgroundPosition={'center center'}
@@ -26,7 +26,7 @@ const navigate = useNavigate()
             color={'white'}
             fontWeight={700}
             lineHeight={1.2}
-            fontSize="3xl">
+            fontSize="6xl">
             {props.data.imageTitle}
           </Text>
           <Stack direction={'row'}>

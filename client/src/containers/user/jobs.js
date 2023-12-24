@@ -7,28 +7,28 @@ const baseUrl = process.env.REACT_APP_BASE_URL
 
 
 const Jobs = () => {
-    const [data, setData] = useState()
-    const [loading, setLoading] = useState(true)
+    // const [data, setData] = useState()
+    // const [loading, setLoading] = useState(true)
 
 
-    const fetchJobsList = async () => {
-        try {
-            console.log("Fetching job list...");
-            const res = await axios.get(`${baseUrl}/jobslist`);
-            setData(res.data.jobsList);
-            // console.log(data)
-            setLoading(false);
-        } catch (error) {
-            console.error('Error fetching data:', error);
-            setLoading(false);
-        }
-    };
+    // const fetchJobsList = async () => {
+    //     try {
+    //         console.log("Fetching job list...");
+    //         const res = await axios.get(`${baseUrl}/jobslist`);
+    //         setData(res.data.jobsList);
+    //         // console.log(data)
+    //         setLoading(false);
+    //     } catch (error) {
+    //         console.error('Error fetching data:', error);
+    //         setLoading(false);
+    //     }
+    // };
 
 
 
-    useEffect(() => {
-        fetchJobsList();
-    }, [])
+    // useEffect(() => {
+    //     fetchJobsList();
+    // }, [])
 
     return (
         <>

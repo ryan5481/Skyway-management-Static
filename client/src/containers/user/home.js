@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react"
 import {
     Box, Heading, Grid, useColorModeValue, Divider, Stack
 } from "@chakra-ui/react"
-import Carousel from "../../components/header/Carousel/carousel"
 import CallToActionWithVideo from "../../components/card/callToActionWithVideo"
 import ImageParagraph from "../../components/card/imageParagraph1"
 import ImageParagraph2 from "../../components/card/imageParagraph2"
@@ -26,19 +25,18 @@ const Home = () => {
         }, 10000);
 
         return () => {
-            clearTimeout(timeout); // Clear the timeout to prevent it from running after unmounting
+            clearTimeout(timeout); 
         };
     }, []);
 
     return (
         <>
-            <Box bg={useColorModeValue('teal.100', 'blue.800')} alignContent={'center'}>
+            <Box bg={useColorModeValue('cyan.200', 'blue.800')} alignContent={'center'}>
                 
                 <MainCarousel  />
                 
                 {/* ABOUT US */}
                 <Box>
-
                 <CallToActionWithVideo pos="relative" bottom={"200px"} />
                 </Box>
                 {/* MESSAGES */}

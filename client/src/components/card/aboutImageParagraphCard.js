@@ -22,23 +22,58 @@ import
 const baseUrl = process.env.REACT_APP_BASE_URL 
 
 export default function AboutImageParagraphCard() {
-  const [data, setData] = useState([])
+  // const [data, setData] = useState([])
 
-  const fetchAboutNepalData = async () => {
-    try {
-      const res = await axios.get(`${baseUrl}/get-about-nepal`);
-      const data = res.data.data;
-      setData(data)
-      // setHeroImage(`data:image/jpeg;base64,${data.heroImage}`)
+  // const fetchAboutNepalData = async () => {
+  //   try {
+  //     const res = await axios.get(`${baseUrl}/get-about-nepal`);
+  //     const data = res.data.data;
+  //     setData(data)
+  //     // setHeroImage(`data:image/jpeg;base64,${data.heroImage}`)
   
-    } catch (error) {
-      console.error("Error: ", error);
-    }
-  };
+  //   } catch (error) {
+  //     console.error("Error: ", error);
+  //   }
+  // };
 
-  useEffect(() => {
-    fetchAboutNepalData();
-  }, []);
+  // useEffect(() => {
+  //   fetchAboutNepalData();
+  // }, []);
+
+    const data = {
+        heroImage: "1.jpeg",
+        title1: "About Nepal",
+        tagline: "A country of lovingkindness and compassion",
+        shortDescription: "Middle Eastern countries continue to attract hundreds of thousands of Nepali migrant workers every year.",
+        paragraph: "Nepal is a mountainous and a landlocked country situated between two giant neighbors, China to the North and India to the South, East, and West. Nepal boasts of having the highest peak of the world, Mount Everest, and visitors from all over the world visit the country to climb Mount Everest and to see the beautiful panorama, snow-capped mountains, and gorgeous historic monuments.\n\nMoreover, it should also be noted that Nepal is the 2nd richest country in the world in water resources with a substantial number of rivers & streams flowing towards the South from the high Himalayas. And the Tilicho Lake situated at the highest land of the world is also in Nepal. So the people who visit Nepal definitely get optimal gratification from its natural gorgeous scenery.",
+        title2: "Demographics",
+        key1: "Population:",
+        value1: "29,164,578",
+        key2: "Growth Rate:",
+        value2: "0.92%",
+        key3: "Migration Rate:",
+        value3: "0.92%", 
+        key4: " Birth Rate:",
+        value4: "17.53 births/1,000 population",
+        key5: "Official Language:",
+        value5: "Nepali",
+        key6: "Title 1",
+        value6: "Description 1",
+        key7: "Title:",
+        value7: "Description",
+        key8: "Title:",
+        value8: "Description",
+        point1: "Construction",
+        point2: "Security",
+        point3: "Cook",
+        point4: "Waiter",
+        point5: "Caretaker",
+        point6: "Driver",
+        point7: "point ",
+        point8: "point ",
+        title3: "Overseas Nepali Immigrant Professions"
+    }
+
   return (
     <Container maxW={'7xl'} color={useColorModeValue('blue.700', 'gray.400')}>
      
@@ -46,7 +81,7 @@ export default function AboutImageParagraphCard() {
         <Image
             rounded={'md'}
             alt={'product image'}
-            src={`data:image/jpeg;base64,${data.heroImage}`}
+            src={`/uploads/aboutNepalImage/${data.heroImage}`}
             fit={'cover'}
             align={'center'}
             w={'100%'}

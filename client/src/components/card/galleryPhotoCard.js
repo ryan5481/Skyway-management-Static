@@ -20,7 +20,7 @@ const GalleryImage = ({ imageData }) => {
         <>
                 <Center>
                 <Image
-                    src={`data:image/jpeg;base64,${imageData.galleryImage}`}
+                    src={`/uploads/galleryImages/${imageData.image}`}
                     alt={imageData.imageTitle}
                     rounded={"10px"}
                     border={"2px solid white"}
@@ -31,18 +31,19 @@ const GalleryImage = ({ imageData }) => {
                 </Center>
             <Modal isOpen={isOpen} onClose={onClose} size='xl' zIndex={9999} >
                     <ModalOverlay />
-                    <ModalContent minW={'80%'}>
-                       
-                        <ModalBody  >
+                    <ModalContent maxW={'80%'}>
+                        <ModalBody>
+                            <Center>
                                 <Image
                                 rounded="10px"
                                     py={3}
-                                    src={`data:image/jpeg;base64,${imageData.galleryImage}`}
-                                    alt={imageData.imageTitle}
+                                    src={`/uploads/galleryImages/${imageData.image}`}
+                                    alt="gallery image"
                                     objectFit='contain'
-                                    w='100%'
-                                    h='100%'
+                                    // w='auto'
+                                    maxH='90vh'
                                 />
+                            </Center>
                         </ModalBody>
                     </ModalContent>
             </Modal>

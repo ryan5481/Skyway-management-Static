@@ -134,6 +134,7 @@ export default function NavBar() {
         minH={'70px'}
         py={{ base: 0 }}
         px={{ base: 4 }}
+        boxShadow="md"
         borderBottom={1}
         borderBottomColor={'blue.200'}
         borderStyle={'solid'}
@@ -155,7 +156,7 @@ export default function NavBar() {
             <Image
               src={`/uploads/logoImage/${logoImageData.image}`}
               alt="Logo"
-              h={{ base: "full", xs: 20 }}
+              maxHeight="16"
               w='full'
               p={2}
               _hover={{

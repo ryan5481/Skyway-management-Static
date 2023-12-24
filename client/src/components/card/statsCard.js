@@ -6,23 +6,41 @@ import { useInView } from 'react-hook-inview';
 const baseUrl = process.env.REACT_APP_BASE_URL 
 
 const StatisticsCard = () => {
-  const [barChartData, setBarChartData] = useState({})
+  // const [barChartData, setBarChartData] = useState({})
   const [inViewRef, inView] = useInView();
   const [isCounting, setIsCounting] = useState(false);
 
-  const fetchBarChartData = async () => {
-    try {
-      const res = await axios.get(`${baseUrl}/get-stats`)
-      const newData = await res.data.data
-      setBarChartData(newData)
-    } catch (error) {
-      console.error("Error: ", error)
-    }
-  }
+  // const fetchBarChartData = async () => {
+  //   try {
+  //     const res = await axios.get(`${baseUrl}/get-stats`)
+  //     const newData = await res.data.data
+  //     setBarChartData(newData)
+  //   } catch (error) {
+  //     console.error("Error: ", error)
+  //   }
+  // }
 
-  useEffect(() => {
-    fetchBarChartData()
-  }, [])
+  // useEffect(() => {
+  //   fetchBarChartData()
+  // }, [])
+
+  const barChartData = {
+    "column1Label": "Countries",
+    "column2Label": "Sectors",
+    "column3Label": "Clients",
+    "column1height": "200",
+    "column2height": "250",
+    "column3height": "300",
+    "box1TopText": "We have employed",
+    "box2TopText": "Partners in",
+    "box3TopText": "We epmploy in",
+    "box1NumberData": 1234,
+    "box2NumberData": 89,
+    "box3NumberData": 246,
+    "box1BottomText": "Nepalese",
+    "box2BottomText": "countries",
+    "box3BottomText": "sectors",
+  }
 
   useEffect(() => {
     if (inView) {

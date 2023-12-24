@@ -78,6 +78,9 @@ const Get50Words = async(inputText) => {
           
               <Center>
                 <Image
+                data-aos="fade-right"
+                data-aos-once="true"
+                data-aos-duration="800"
                   alt={'Hero Image'}
                   fit={'cover'}
                   align={'center'}
@@ -100,7 +103,11 @@ const Get50Words = async(inputText) => {
               fontSize={{ base: '3xl', sm: '4xl', lg: '6xl' }}
               >
 
-              <Text as={'span'}  >
+              <Text as={'span'} 
+              data-aos="flip-up"
+              data-aos-once="true"
+              data-aos-duration="800"
+               >
                 About Us
               </Text>
             </Heading>
@@ -115,7 +122,6 @@ const Get50Words = async(inputText) => {
               px={6}
               w={"200px"}
               placeItems="center"
-              bg={'blue.400'}
               color={useColorModeValue('blue.500', 'gray.900')}
               _hover={{ bg: 'whiteAlpha.900', color:'blue.600' }}
               onClick={() => navigate("/about-us")}

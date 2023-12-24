@@ -5,25 +5,40 @@ import {
 } from '@chakra-ui/react'
 const baseUrl = process.env.REACT_APP_BASE_URL 
 
-const Newspaper = () => {
+const License = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [selectedCertificateIndex, setSelectedCertificateIndex] = useState(null);
 
-  const [certificatesList, setCertificatesList] = useState([])
+  // const [certificatesList, setCertificatesList] = useState([])
 
-  const fetchCertificates = async () => {
-    try {
-      const res = await axios.get(`${baseUrl}/get-certificate-images`)
-      const data = res.data.data
-      setCertificatesList(data)
-    } catch (error) {
-      console.error("Error: ", error)
-    }
-  }
+  // const fetchCertificates = async () => {
+  //   try {
+  //     const res = await axios.get(`${baseUrl}/get-certificate-images`)
+  //     const data = res.data.data
+  //     setCertificatesList(data)
+  //   } catch (error) {
+  //     console.error("Error: ", error)
+  //   }
+  // }
 
-  useEffect(() => {
-    fetchCertificates()
-  }, [])
+  // useEffect(() => {
+  //   fetchCertificates()
+  // }, [])
+
+  const certificatesList = [
+        {
+            certificateImage: "1.jpeg", 
+            certificateTitle: "License",
+        },
+        {
+          certificateImage: "2.jpeg", 
+            certificateTitle: "PAN",
+        },
+        {
+          certificateImage: "3.jpeg", 
+          certificateTitle: "Registration",
+        }
+    ]
 
   const openModal = (index) => {
     setSelectedCertificateIndex(index);
@@ -73,9 +88,9 @@ const Newspaper = () => {
               >
                 <Image
                   rounded={"10px"}
-                  objectFit="cover" // Set object-fit to "cover"
+                  objectFit="cover" 
                   width="100%"
-                  src={`data:image/jpeg;base64,${cert.certificateImage}`}
+                  src={`/uploads/licenseImages/${cert.certificateImage}`}
                 />
               </Center>
               <Text fontWeight="bold" fontSize="2xl" m={5} textAlign={"center"} >{cert.certificateTitle}</Text>
@@ -85,7 +100,7 @@ const Newspaper = () => {
                   <ModalBody  >
                     <Image
                       py={3}
-                      src={`data:image/jpeg;base64,${cert.certificateImage}`}
+                      src={`/uploads/licenseImages/${cert.certificateImage}`}
                       alt={cert.certificateTitle}
                     />
                   </ModalBody>
@@ -99,5 +114,5 @@ const Newspaper = () => {
   )
 }
 
-export default Newspaper
+export default License
 

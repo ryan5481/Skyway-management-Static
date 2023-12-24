@@ -7,28 +7,34 @@ import {
 const baseUrl = process.env.REACT_APP_BASE_URL 
 
 const Gallery = () => {
+    // const [imageGalleryData, setImageGalleryData] = useState([])
 
-    const [imageGalleryData, setImageGalleryData] = useState([])
+    // const fetchGalleryImages = async () => {
 
+    //     try {
+    //         const res = await axios.get(`${baseUrl}/get-gallery-images`)
+    //         if (res) {
+    //             const data = await res.data.data
+    //             setImageGalleryData(data)
+    //         } else {
+    //             console.log("Failed to fetch images")
+    //         }
+    //     } catch (error) {
+    //         console.log(error)
+    //     }
+    // }
 
-    const fetchGalleryImages = async () => {
+    // useEffect(() => {
+    //     fetchGalleryImages();
+    // }, [])
 
-        try {
-            const res = await axios.get(`${baseUrl}/get-gallery-images`)
-            if (res) {
-                const data = await res.data.data
-                setImageGalleryData(data)
-            } else {
-                console.log("Failed to fetch images")
-            }
-        } catch (error) {
-            console.log(error)
-        }
-    }
-
-    useEffect(() => {
-        fetchGalleryImages();
-    }, [])
+    const imageGalleryData = [
+        {image: "1.jpeg"},
+        {image: "2.jpg"},
+        {image: "3.jpg"},
+        {image: "4.jpg"},
+        {image: "5.jpg"},
+    ]
     
     return(
         <Center 

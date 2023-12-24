@@ -20,7 +20,7 @@ import { FaFilePdf } from 'react-icons/fa'
 import { BiMailSend } from 'react-icons/bi'
 import { BsWhatsapp, BsMessenger } from 'react-icons/bs'
 import { MdFacebook } from 'react-icons/md'
-const baseUrl = process.env.REACT_APP_BASE_URL 
+const baseUrl = process.env.REACT_APP_BASE_URL
 
 const ListHeader = ({ children }: { children: ReactNode }) => {
     return (
@@ -36,26 +36,27 @@ const Footer = () => {
     // const [logoImageData, setLogoImageData] = useState({});
     const [email, setEmail] = useState('');
     const toast = useToast()
-    
+
     //MAIL SUBSCRIBE
-    const handleInputChange = async(event) => {
+    const handleInputChange = async (event) => {
         setEmail(event.target.value)
     }
 
     const handleSubscribeMail = (event) => {
         event.preventDefault()
-        try{
+        try {
             setEmail(event.target.value)
-             if (email){ 
+            if (email) {
                 toast({
-                title: 'Subscribed',
-                description: 'You are subscribed to our newsletter.',
-                status: 'success',
-                duration: 3000,
-                isClosable: true,
-                position: 'top'
-            })}
-        }catch(error){
+                    title: 'Subscribed',
+                    description: 'You are subscribed to our newsletter.',
+                    status: 'success',
+                    duration: 3000,
+                    isClosable: true,
+                    position: 'top'
+                })
+            }
+        } catch (error) {
             console.error("Error: " + error)
         }
     }
@@ -73,7 +74,7 @@ const Footer = () => {
 
     const logoImageData = {
         image: "1.jpeg"
-      }
+    }
 
     //SOCIAL ICON LINKS
     function openMessengerChat(recipientId) {
@@ -117,28 +118,25 @@ const Footer = () => {
     // }, [])
 
     const socialData = {
-            "oneTapMessengerLink": "facebook.com/example",
-            "_id": "64f5be64a202c937ea933da7",
-            "landmark": "radiantInfoTech",
-            "regdField": "Regd.No. 1234567890",
-            "licenseField": "Lic.No. 900/067/068",
-            "email": "info@skywaynepal.com",
-            "address": "Gaushala-8 Batissputali, Kathmandu, Nepal",
-            "phoneNumber1": 14560160,
-            "phoneNumber2": 4460697,
-            "whatsappId": "+9779818368104",
-            "facebookId": "fb",
-            "viberId": "viber.com.id",
-            "contactUsHeading": "Stay In Touch",
-            "contactUsSubHeading": "Click to call, email or message us",
-            "createdAt": "2023-09-04T11:24:20.564Z",
-            "updatedAt": "2023-09-04T11:24:20.564Z",
-            "column1Line1": "Line 1",
-            "column1Line2": "Line 2",
-            "column1Line3": "Line 3",
-            "fileDownloadText": "Download Brochure",
-            "messengerId": "hello"
-        }
+        "oneTapMessengerLink": "facebook.com/Skywaymanagement",
+        "landmark": "radiantInfoTech",
+        "regdField": "Regd.No. 1234567890",
+        "licenseField": "Lic.No. 900/067/068",
+        "email": "info@skywaynepal.com",
+        "address": "Gaushala-8 Batissputali, Kathmandu, Nepal",
+        "phoneNumber1": "+977-1-14560160",
+        "phoneNumber2": "+977-1-14460697",
+        "whatsappId": "+9779818368104",
+        "facebookId": "Skywaymanagement",
+        "viberId": "viber.com.id",
+        "contactUsHeading": "Stay In Touch",
+        "contactUsSubHeading": "Click to call, email or message us",
+        "column1Line1": "Line 1",
+        "column1Line2": "Line 2",
+        "column1Line3": "Line 3",
+        "fileDownloadText": "Download Brochure",
+        "messengerId": "Skywaymanagement"
+    }
 
     //GET FOOTER DATA
     // const GetFooterData = async () => {
@@ -157,18 +155,18 @@ const Footer = () => {
     // }, [])
 
     const currentFooterData = {
-            "column1Line1": "Sky-Way Management Pvt Ltd",
-            "column1Line2": "Connecting Talent to Opportunity",
-            "column1Line3": "since 2001",
-            "facebookLink": "facebook.com",
-            "messangerLink": "messangermessanger",
-            "whatsappLink": "wassapppwassappp!",
-            "twitterLink": "tweettweet",
-            "youtubeLink": "youtubeyoutube",
-            "instagramLink": "instainstainstagrat",
-            "fileDownloadText": "Download Brochure",
-            "messengerLink": "messenger.com"
-        }
+        "column1Line1": "Sky-Way Management Pvt Ltd",
+        "column1Line2": "Connecting Talent to Opportunity",
+        "column1Line3": "since 2001",
+        "facebookLink": "facebook.com",
+        "messangerLink": "messangermessanger",
+        "whatsappLink": "+9779851041538",
+        "twitterLink": "tweettweet",
+        "youtubeLink": "youtubeyoutube",
+        "instagramLink": "instainstainstagrat",
+        "fileDownloadText": "Download Brochure",
+        "messengerLink": "messenger.com"
+    }
 
     return (
         <Box
@@ -179,8 +177,10 @@ const Footer = () => {
             <Container as={Stack} maxW={'7xl'} py={10}>
                 <SimpleGrid
                     templateColumns={{ sm: '1fr 1fr', md: '1fr 1fr 1fr 1fr 1fr' }}
-                    spacing={2}>
-                    <Stack spacing={6}>
+                    spacing={5}>
+                    <Stack 
+                    px={2}
+                    spacing={6}>
                         <Box align="center">
                             <Image
                                 h={20}
@@ -241,21 +241,21 @@ const Footer = () => {
                         <Box as="a" href={'/gallery'} _hover={{ color: '#0D74FF' }}>
                             Image Gallery
                         </Box>
-                        
+
                     </Stack>
                     <Stack align={'flex-start'} >
                         <ListHeader>Support</ListHeader>
                         <Box as="a" href={'contact-us'} _hover={{ color: '#0D74FF' }}>
                             Contact Us
                         </Box>
-                        
+
                         <Box as="a" href={'/license'} _hover={{ color: '#0D74FF' }}>
                             License
                         </Box>
                         <Box as="a" href={'/resume'} _hover={{ color: '#0D74FF' }}>
                             Submit Resume
                         </Box>
-                        
+
                         <Box as="a" href={'/jobs'} _hover={{ color: '#0D74FF' }}>
                             Latest Jobs
                         </Box>
@@ -297,7 +297,8 @@ const Footer = () => {
                         </Stack>
                     </Stack>
                     <Stack overflow='hidden' borderRadius={10} h={260} w={200} align={'center'} alignItems={'center'}>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1023.6851100697893!2d85.33048799804155!3d!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1907b0522ead%3A0x392af32fe87dd0ea!2sRadiant%20Infotech%20Nepal%20Pvt.%20Ltd.!5e0!3m2!1sen!2snp!4v1690782916035!5m2!1sen!2snp"
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14130.020088774581!2d85.34113409999999!3d27.7016894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb1983ee163391%3A0x8cbc1871ad79125f!2sSKYWAY%20MANAGEMENT%20PVT.%20LTD.!5e0!3m2!1sen!2snp!4v1703396705561!5m2!1sen!2snp"
+
                             width="200"
                             height="260"
                             style={{ border: 0 }}

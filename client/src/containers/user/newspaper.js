@@ -6,23 +6,35 @@ import {
 const baseUrl = process.env.REACT_APP_BASE_URL 
 
 const Newspaper = () => {
-  const [newspaperAds, setNewspaperAds] = useState([]);
+  // const [newspaperAds, setNewspaperAds] = useState([]);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [selectedAdIndex, setSelectedAdIndex] = useState(null);
 
-  const fetchNewspaperAds = async () => {
-    try {
-      const res = await axios.get(`${baseUrl}/get-newspaper-images`)
-      const data = res.data.data
-      setNewspaperAds(data)
-    } catch (error) {
-      console.error("Error: ", error)
-    }
-  }
+  // const fetchNewspaperAds = async () => {
+  //   try {
+  //     const res = await axios.get(`${baseUrl}/get-newspaper-images`)
+  //     const data = res.data.data
+  //     setNewspaperAds(data)
+  //   } catch (error) {
+  //     console.error("Error: ", error)
+  //   }
+  // }
 
-  useEffect(() => {
-    fetchNewspaperAds()
-  }, [])
+  // useEffect(() => {
+  //   fetchNewspaperAds()
+  // }, [])
+
+  const newspaperAds = [
+        {
+            newsAdImage: "1.jpg",
+        },
+        {
+          newsAdImage: "2.jpg",
+        },
+        {
+          newsAdImage: "3.jpg",
+        }
+    ]
 
   const openModal = (index) => {
     setSelectedAdIndex(index);
@@ -50,7 +62,7 @@ const Newspaper = () => {
         p={5}>
 
         <Text as={'span'}>
-          Licenses and Certificates
+          Newspaper Advertisements
         </Text>
       </Heading>
       <Grid templateColumns={{ sm: '1fr', md: '1fr 1fr', lg: "1fr 1fr", xl: '1fr 1fr 1fr' }} gap={5} p={1} justifyItems="center">
@@ -75,7 +87,7 @@ const Newspaper = () => {
                   rounded={"10px"}
                   objectFit="cover" // Set object-fit to "cover"
                   width="100%"
-                  src={`data:image/jpeg;base64,${ad.newsAdImage}`}
+                  src={`/uploads/newspaperAdImages/${ad.newsAdImage}`}
                 />
               </Center>
               <Text fontWeight="bold" fontSize="2xl" m={5} textAlign={"center"} >{ad.newsAdTitle}</Text>
@@ -85,7 +97,7 @@ const Newspaper = () => {
                   <ModalBody  >
                     <Image
                       py={3}
-                      src={`data:image/jpeg;base64,${ad.newsAdImage}`}
+                      src={`/uploads/newspaperAdImages/${ad.newsAdImage}`}
                       alt={ad.newsAdTitle}
                     />
                   </ModalBody>

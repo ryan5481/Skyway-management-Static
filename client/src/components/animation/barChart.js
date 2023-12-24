@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import axios from "axios"
 import { Box, ChakraProvider, Text } from '@chakra-ui/react';
 import { useInView } from 'react-hook-inview';
-const baseUrl = process.env.REACT_APP_BASE_URL 
+const baseUrl = process.env.REACT_APP_BASE_URL
 
 const BarChart = () => {
 
@@ -22,15 +22,15 @@ const BarChart = () => {
     "box1BottomText": "Nepalese",
     "box2BottomText": "countries",
     "box3BottomText": "sectors",
-}
+  }
 
   const [barHeights, setBarHeights] = useState([0, 0, 0]);
   const [animationStarted, setAnimationStarted] = useState(false);
   const [inViewRef, inView] = useInView();
   // const [barChartData, setBarChartData] = useState({})
   let labels = []
-  barChartData && 
-  (labels = [barChartData.column1Label, barChartData.column2Label, barChartData.column3Label])
+  barChartData &&
+    (labels = [barChartData.column1Label, barChartData.column2Label, barChartData.column3Label])
   const bg = ['yellow.400', 'red.400', 'green.400']
 
   // const fetchBarChartData = async () => {
@@ -65,38 +65,38 @@ const BarChart = () => {
   }, [inView, animationStarted]);
 
   return (
-      <Box
-        display="flex"
-        justifyContent="center"
-        alignItems="flex-end"
-        minHeight="200px"
-        width="100%"
-        marginBottom="20px"
-        h={"30vh"}
-        ref={inViewRef}
-      >
-        {barHeights.map((height, index) => (
+    <Box
+      display="flex"
+      justifyContent="center"
+      alignItems="flex-end"
+      minHeight="200px"
+      width="100%"
+      marginBottom="20px"
+      h={"30vh"}
+      ref={inViewRef}
+    >
+      {barHeights.map((height, index) => (
+        <Box
+          key={index}
+          width={'100px'}
+          display="flex"
+          flexDirection="column"
+          alignItems="center"
+          marginX="30px"
+        >
+
           <Box
-            key={index}
-            width={'100px'}
-            display="flex"
-            flexDirection="column"
-            alignItems="center"
-            marginX="30px"
-          >
-            
-            <Box
-              width="100%"
-              minW={'50px'}
-              height={`${animationStarted ? height : 0}px`}
-              bg={bg[index]}
-              transition="height 2s ease-in-out"
-              shadow={"xl"}
-            />
-            <Text pt={5} fontSize={"md"} fontWeight={"bold"} color={bg[index]} textAlign={'center'}>{labels[index]}</Text> {/* Customizable label */}
-          </Box>
-        ))}
-      </Box>
+            width="100%"
+            minW={'50px'}
+            height={`${animationStarted ? height : 0}px`}
+            bg={bg[index]}
+            transition="height 2s ease-in-out"
+            shadow={"xl"}
+          />
+          <Text pt={5} fontSize={"md"} fontWeight={"bold"} color={bg[index]} textAlign={'center'}>{labels[index]}</Text>
+        </Box>
+      ))}
+    </Box>
   );
 };
 

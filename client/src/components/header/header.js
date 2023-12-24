@@ -50,24 +50,45 @@ const SocialButton = ({
 
 const Header = () => {
   const [isMobileView, setIsMobileView] = useState(false);
-  const [data, setData] = useState([])
+  // const [data, setData] = useState([])
 
 
-  const GetHeaderData = async() => {
-    // const res = await axios.get(`${baseUrl}/get-contact`)
-       const res = await axios.get(`${baseUrl}/get-contact`)
+  // const GetHeaderData = async() => {
+  //   // const res = await axios.get(`${baseUrl}/get-contact`)
+  //      const res = await axios.get(`${baseUrl}/get-contact`)
 
-    if(res){
-      // console.log("DATAAAA:" + data)
-      setData(res.data.data)
-    }else{
-      alert("Failed to fech header data")
+  //   if(res){
+  //     // console.log("DATAAAA:" + data)
+  //     setData(res.data.data)
+  //   }else{
+  //     alert("Failed to fech header data")
+  //   }
+  // } 
+
+  // useEffect(() => {
+  //   GetHeaderData()
+  // }, [])
+
+  const data ={
+        "oneTapMessengerLink": "facebook.com/example",
+        "regdField": "Regd.No. 66236/066/067",
+        "licenseField": "Lic.No. 900/067/068",
+        "email": "info@skywaynepal.com",
+        "address": "Gaushala-8 Batissputali, Kathmandu, Nepal",
+        "phoneNumber1": "+977-1-4460160",
+        "phoneNumber2": "+977-1-4460697",
+        "whatsappId": "+9779851041538",
+        "facebookId": "Skywaymanagement",
+        "viberId": "viber.com.id",
+        "contactUsHeading": "Stay In Touch",
+        "contactUsSubHeading": "Click to call, email or message us",
+        "column1Line1": "Line 1",
+        "column1Line2": "Line 2",
+        "column1Line3": "Line 3",
+        "fileDownloadText": "Download Brochure",
+        "messengerId": "Skywaymanagement"
     }
-  } 
 
-  useEffect(() => {
-    GetHeaderData()
-  }, [])
 
   useEffect(() => {
     const handleResize = () => {
